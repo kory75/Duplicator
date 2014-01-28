@@ -1,0 +1,183 @@
+#:kivy 1.0.9
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+
+[MenuBar@BoxLayout]:
+	orientation: 'vertical'
+	size_hint: .25,1
+	padding:10
+	spacing:5
+	Button:
+		size_hint: 1,.25
+	    pos_hint:{'top': 1}
+	    background_normal: 'img/Menu-Button.png'
+	    background_down: 'img/Menu-Button-Down.png'
+		on_press: app.switchtoscreen('menu')
+	
+	Label: 
+		text: 'Duplicator'
+		size_hint: 1,.55
+				
+	Button:			
+		size_hint: 1,.20
+		on_press: app.stop()
+		background_normal: 'img/Exit-Button.png'
+		background_down: 'img/Exit-Button-Down.png'    
+		   
+<MenuScreen>:    
+    BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		StackLayout:
+			spacing:2
+			padding:2
+			Button:
+		        background_normal: 'img/Menu-Printer-Button.png'
+		        background_down: 'img/Menu-Printer-Button-Down.png'
+		        size_hint: .33, .33
+		        on_press: app.switchtoscreen('print')
+				
+		    Button:
+		        background_normal: 'img/Menu-Scanner-Button.png'
+		        background_down: 'img/Menu-Scanner-Button-Down.png'
+		        size_hint: .33, .33
+		        on_press: app.switchtoscreen('scan') 
+		        	
+		        
+		    Button:
+		        background_normal: 'img/Menu-File-Button.png'
+		        background_down: 'img/Menu-File-Button-Down.png'
+		        size_hint: .33, .33
+		        on_press: app.switchtoscreen('file') 
+			        
+			Button:
+		        background_normal: 'img/Menu-Controll-Button.png'
+		        background_down: 'img/Menu-Controll-Button-Down.png'
+		        size_hint: .33, .33  
+		        on_press: app.switchtoscreen('controll') 
+		       
+			Button:
+		        background_normal: 'img/Menu-Model-Button.png'
+		        background_down: 'img/Menu-Model-Button-Down.png'
+		        size_hint: .33, .33  
+		        on_press: app.switchtoscreen('model')     
+		    
+		        
+		    Button: 
+		        size_hint: .33, .33  
+		        background_normal: 'img/Menu-View-Button.png'
+		        background_down: 'img/Menu-View-Button-Down.png'
+		        on_press: app.switchtoscreen('view')   
+		        
+		        
+		MenuBar:
+			
+		        
+<PrintScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		Label:
+			text: 'Print'
+		
+		MenuBar:
+	        
+
+<ScanScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .66,1
+		
+			StackLayout:
+				orientation:'tb-lr'
+				Camera:
+					id:scan_camera
+					size_hint:1,.66
+					index:0
+					play:True
+					
+					
+				Button:
+					text:'Scan'	
+					size_hint:1,.33
+							
+				
+			StackLayout:
+				orientation:'tb-lr'
+				size_hint:.33,1
+				Button:
+					text:'Init'
+					size_hint: 1,.20
+					
+				Button:
+					text:'Laser'
+					size_hint: 1,.20
+					
+				Label:
+					text: 'Filename.scan'
+					size_hint: 1,.20
+					
+				Button:
+					text:'slice'
+					size_hint: 1,.20
+					
+				Button:
+					text:'upload'
+					size_hint: 1,.20
+					
+				
+		
+		MenuBar:    
+		
+<FileScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		Label:
+			text: 'File'
+		
+		MenuBar:   
+		
+<ControllScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		Label:
+			text: 'Controll'
+		
+		MenuBar:
+		
+<ModelScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		Label:
+			text: 'Model'
+		
+		MenuBar:
+		
+<ViewScreen>:
+	BoxLayout:
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		Label:
+			text: 'View'
+		
+		MenuBar:
+	        
+	        
