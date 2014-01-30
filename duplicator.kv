@@ -3,7 +3,7 @@
 
 [MenuBar@BoxLayout]:
 	orientation: 'vertical'
-	size_hint: .25,1
+	size_hint: .20,1
 	padding:10
 	spacing:5
 	Button:
@@ -14,7 +14,7 @@
 		on_press: app.switchtoscreen('menu')
 	
 	Label: 
-		text: 'Duplicator'
+		text: 'Duplicator V0.1'
 		size_hint: 1,.55
 				
 	Button:			
@@ -29,6 +29,7 @@
         pos: root.pos
     	orientation: 'horizontal'
 		StackLayout:
+			size_hint: .80,1
 			spacing:2
 			padding:2
 			Button:
@@ -79,8 +80,25 @@
         pos: root.pos
     	orientation: 'horizontal'
 		
-		Label:
-			text: 'Print'
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: .80,1
+		
+			FileChooserIconView:
+	            id: print_filechooser
+				size_hint:1,.66
+				
+			StackLayout:
+				orientation:'lr-tb'
+				size_hint:1,.33
+				
+				Button:
+					text: 'Init'
+					size_hint:.5,1
+				
+				Button:
+					text: 'Print'
+					size_hint:.5,1
 		
 		MenuBar:
 	        
@@ -93,15 +111,16 @@
 		
 		BoxLayout:
 			orientation: 'horizontal'
-			size_hint: .66,1
+			size_hint: .80,1
 		
 			StackLayout:
+				id:scancamera
 				orientation:'tb-lr'
 				Camera:
 					id:scan_camera
 					size_hint:1,.66
-					index:0
-					play:True
+					
+					
 					
 					
 				Button:
@@ -115,6 +134,10 @@
 				Button:
 					text:'Init'
 					size_hint: 1,.20
+					on_press:
+						scan_camera.play=True
+						scan_camera.resolution=(640, 480)
+						scan_camera.index=0
 					
 				Button:
 					text:'Laser'
@@ -142,8 +165,29 @@
         pos: root.pos
     	orientation: 'horizontal'
 		
-		Label:
-			text: 'File'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			FileChooserIconView:
+	            id: file_filechooser
+				size_hint:.66,1
+		
+			StackLayout:
+				orientation:'tb-lr'
+				size_hint:.33,1
+			
+				Button:
+					text: 'Print'
+					size_hint:1,.33
+					
+				Button:
+					text: 'Upload'
+					size_hint:1,.33
+					
+				Button:
+					text: 'Slice'
+					size_hint:1,.33
 		
 		MenuBar:   
 		
@@ -153,8 +197,18 @@
         pos: root.pos
     	orientation: 'horizontal'
 		
-		Label:
-			text: 'Controll'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+			
+			
+			Button:
+				id:heater_switch1
+				text: '26C'
+				background_normal: 'img/Controll/Heater-Button-Off.png'
+				background_down: 'img/Controll/Heater-Button-Off.png'					
+					
 		
 		MenuBar:
 		
@@ -164,8 +218,12 @@
         pos: root.pos
     	orientation: 'horizontal'
 		
-		Label:
-			text: 'Model'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			Label:
+				text: 'Model'
 		
 		MenuBar:
 		
@@ -175,8 +233,12 @@
         pos: root.pos
     	orientation: 'horizontal'
 		
-		Label:
-			text: 'View'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			Label:
+				text: 'View'
 		
 		MenuBar:
 	        
