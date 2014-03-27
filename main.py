@@ -9,6 +9,11 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.factory import Factory
 from kivy.properties import ObjectProperty            
 
+from printrun.printcore import printcore
+from printrun.gcoder import GCode
+from printrun.printrun_utils import imagefile , lookup_file
+#import gcode
+
 class MenuScreen(Screen):
     pass
 
@@ -31,6 +36,9 @@ class ViewScreen(Screen):
     pass
 
 class DuplicatorApp(App):
+	#icon = 'icon.png'
+    #title = 'Duplicator Ultimate 3D printing app - alpha'
+    
 	sm = 0
 	def build(self):
 		self.sm = ScreenManager()
@@ -42,6 +50,7 @@ class DuplicatorApp(App):
 		self.sm.add_widget(ModelScreen(name='model'))
 		self.sm.add_widget(ViewScreen(name='view'))
 		
+		#connecttoprinter.bind(active=switchprinter)
 		return self.sm
 		
 	def switchtoscreen(self,ScreenName):
@@ -49,8 +58,37 @@ class DuplicatorApp(App):
 		#self.sm.switch_to(self.sm.get_screen(ScreenName))
 		#pass
 		
-
-
+	def connectprinter(self,activeswitch):
+		if activeswitch:
+			print('connecting')
+			try:
+				self.activeprinter=printcore('/dev/tty.usbmodem1411',115200)
+				print('connected')
+			except:
+				print('Unable to connect!')
+				#self.connectprinterswitch.active=0
+				
+		else: 
+			print('disconnecting....');
+			try:
+				self.activeprinter.disconnect()
+				print('Done');
+			except:
+				print('No printer')
+				
+				
+	def homeprinter(self):
+		self.activeprinter.send_now('G28')
+		
+	def homeX(self):
+		self.activeprinter.send_now('G28 X')
+		
+	def homeY(self):
+		self.activeprinter.send_now('G28 Y')
+		
+	def homeZ(self):
+		self.activeprinter.send_now('G28 Z')
+	
 
 if __name__ == '__main__':
     DuplicatorApp().run()

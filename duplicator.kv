@@ -81,25 +81,198 @@
     	orientation: 'horizontal'
 		
 		BoxLayout:
-			orientation: 'vertical'
+			orientation: 'horizontal'
 			size_hint: .80,1
 		
-			FileChooserIconView:
-	            id: print_filechooser
-				size_hint:1,.66
+			Accordion:
+				collapse: 1
+				orientation: 'vertical'
+				AccordionItem:
+					title: 'Files'
+						
+					BoxLayout:
+						orientation: 'vertical'
+						size_hint: .80,1
+					
+						FileChooserIconView:
+				            id: print_filechooser
+							size_hint:1,.80
+							
+						StackLayout:
+							orientation:'lr-tb'
+							size_hint:1,.20
+										
+							Button:
+								text: 'Print'
+								size_hint:1,1
 				
-			StackLayout:
-				orientation:'lr-tb'
-				size_hint:1,.33
-				
-				Button:
-					text: 'Init'
-					size_hint:.5,1
-				
-				Button:
-					text: 'Print'
-					size_hint:.5,1
-		
+				AccordionItem:
+					collapse: 0
+					title: 'Controll'
+					
+					#Manual controll
+					BoxLayout:
+						orientation: 'vertical'
+						size_hint: .80,1
+						
+						#XYZ
+						BoxLayout:
+							orientation: 'horizontal'
+							size_hint: 1,.70
+						
+							#stepsize
+							BoxLayout:
+								orientation: 'vertical'
+								size_hint: .19,1
+								
+								ToggleButton:
+									text: '100mm'
+									size_hint:1,.25
+									group: 'stepSize'
+								ToggleButton:
+									text: '10mm'
+									size_hint:1,.25
+									group: 'stepSize'
+								ToggleButton:
+									text: '1mm'
+									size_hint:1,.25
+									group: 'stepSize'
+								ToggleButton:
+									text: '0.1mm'
+									size_hint:1,.25
+									group: 'stepSize'
+						
+						    #X
+							BoxLayout:
+								orientation: 'vertical'
+								size_hint: .28,1
+								
+								Button:
+									text: '+X'
+									size_hint:1,.33
+								Button:
+									text: 'X Home'
+									size_hint:1,.33
+									on_press: app.homeX()
+								Button:
+									text: '-X'
+									size_hint:1,.33
+							#Y
+							BoxLayout:
+								orientation: 'vertical'
+								size_hint: .28,1
+								
+								Button:
+									text: '+Y'
+									size_hint:1,.33
+								Button:
+									text: 'Y Home'
+									size_hint:1,.33
+									on_press: app.homeY()
+								Button:
+									text: '-Y'
+									size_hint:1,.33
+							#Z
+							BoxLayout:
+								orientation: 'vertical'
+								size_hint: .28,1
+								
+								Button:
+									text: '+Z'
+									size_hint:1,.33
+								Button:
+									text: 'Z Home'
+									size_hint:1,.33
+									on_press: app.homeZ()
+								Button:
+									text: '-Z'
+									size_hint:1,.33
+						#home and heater	
+						BoxLayout:
+							orientation: 'horizontal'
+							size_hint: 1,.1
+							
+							Label:
+								text: 'Heater 235C'
+								size_hint:.33,1
+							Switch:
+								active: 1
+								size_hint:.33,1
+							Button:
+								text: 'Home All'
+								size_hint:.33,1
+								on_press: app.homeprinter()
+						#Extruders	
+						BoxLayout:
+							orientation: 'vertical'
+							size_hint: 1,.20
+							
+							BoxLayout:
+								orientation: 'horizontal'
+								size_hint: 1,.5
+							
+								Button:
+									text: '-E 1'
+									size_hint:.25,1
+								Label:
+									text: '235C'
+									size_hint:.25,1
+								Switch:
+									active: 0
+									text: 'Extruder On'
+									size_hint:.25,1
+								Button:
+									text: '+E 1'
+									size_hint:.25,1
+					
+							BoxLayout:
+								orientation: 'horizontal'
+								size_hint: 1,.5
+							
+								Button:
+									text: '-E 2'
+									size_hint:.25,1
+								Label:
+									text: '235C'
+									size_hint:.25,1
+								Switch:
+									active: 0
+									text: 'Extruder On'
+									size_hint:.25,1
+								Button:
+									text: '+E 2'
+									size_hint:.25,1
+							
+
+					
+					#Controlls
+					BoxLayout:
+						orientation: 'vertical'
+						size_hint: .20,1
+
+						Label:
+							text: 'Connect'
+							size_hint:1,.1
+						Switch:
+							id:connectprinterswitch
+							active: 0
+							size_hint:1,.1
+							on_active: app.connectprinter(self.active)
+						Label:
+							text: 'Preheat'
+							size_hint:1,.1
+						Switch:
+							active: 1
+							size_hint:1,.1
+						Button:
+							text: 'Motors off'
+							size_hint:1,.2
+						Button:
+							text: 'Emergency Stop'
+							size_hint:1,.2
+						Button:
+							text: 'Pause'
+							size_hint:1,.2
 		MenuBar:
 	        
 
