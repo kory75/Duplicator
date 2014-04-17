@@ -188,12 +188,12 @@
       </controlProperties>
     </control>
     <control controlID="37" controlTypeID="com.balsamiq.mockups::Switch" x="148" y="698" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="35" locked="false" isInGroup="-1"/>
-    <control controlID="38" controlTypeID="com.balsamiq.mockups::ComboBox" x="517" y="504" w="-1" h="-1" measuredW="58" measuredH="24" zOrder="42" locked="false" isInGroup="-1">
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::ComboBox" x="648" y="504" w="-1" h="-1" measuredW="58" measuredH="24" zOrder="42" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Com</text>
       </controlProperties>
     </control>
-    <control controlID="39" controlTypeID="com.balsamiq.mockups::ComboBox" x="590" y="504" w="-1" h="-1" measuredW="69" measuredH="24" zOrder="43" locked="false" isInGroup="-1">
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::ComboBox" x="717" y="504" w="-1" h="-1" measuredW="69" measuredH="24" zOrder="43" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Speed</text>
       </controlProperties>
@@ -243,9 +243,9 @@
         <text>Home%20All</text>
       </controlProperties>
     </control>
-    <control controlID="49" controlTypeID="com.balsamiq.mockups::ComboBox" x="519" y="542" w="-1" h="-1" measuredW="94" measuredH="24" zOrder="47" locked="false" isInGroup="-1">
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::ComboBox" x="519" y="542" w="-1" h="-1" measuredW="100" measuredH="24" zOrder="47" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>3%20Extruder</text>
+        <text>3%20Extruders</text>
       </controlProperties>
     </control>
     <control controlID="50" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="517" y="607" w="-1" h="-1" measuredW="108" measuredH="127" zOrder="58" locked="false" isInGroup="-1">
@@ -263,7 +263,7 @@
         <text>Preheat%20temp</text>
       </controlProperties>
     </control>
-    <control controlID="53" controlTypeID="com.balsamiq.mockups::Button" x="746" y="757" w="-1" h="-1" measuredW="107" measuredH="27" zOrder="48" locked="false" isInGroup="-1">
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Button" x="734" y="757" w="-1" h="-1" measuredW="107" measuredH="27" zOrder="48" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Save%20Settings</text>
       </controlProperties>
@@ -340,9 +340,9 @@
         <text>Save%20Settings</text>
       </controlProperties>
     </control>
-    <control controlID="78" controlTypeID="com.balsamiq.mockups::ComboBox" x="34" y="918" w="-1" h="-1" measuredW="83" measuredH="24" zOrder="67" locked="false" isInGroup="-1">
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::ComboBox" x="34" y="918" w="-1" h="-1" measuredW="77" measuredH="24" zOrder="67" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>slic3r%201.0</text>
+        <text>Printrun</text>
       </controlProperties>
     </control>
     <control controlID="79" controlTypeID="com.balsamiq.mockups::ComboBox" x="31" y="965" w="-1" h="-1" measuredW="88" measuredH="24" zOrder="68" locked="false" isInGroup="-1">
@@ -373,9 +373,9 @@
       </controlProperties>
     </control>
     <control controlID="84" controlTypeID="com.balsamiq.mockups::Canvas" x="500" y="905" w="353" h="180" measuredW="100" measuredH="70" zOrder="73" locked="false" isInGroup="-1"/>
-    <control controlID="85" controlTypeID="com.balsamiq.mockups::Button" x="497" y="1110" w="116" h="74" measuredW="53" measuredH="27" zOrder="74" locked="false" isInGroup="-1">
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Button" x="497" y="1110" w="116" h="74" measuredW="94" measuredH="27" zOrder="74" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Scan</text>
+        <text>Scan%20/%20Stop</text>
       </controlProperties>
     </control>
     <control controlID="86" controlTypeID="com.balsamiq.mockups::Button" x="613" y="1110" w="104" h="74" measuredW="41" measuredH="27" zOrder="75" locked="false" isInGroup="-1">
@@ -435,6 +435,57 @@
     <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="721" y="1111" w="132" h="73" measuredW="75" measuredH="27" zOrder="87" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Calibrate</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Button" x="789" y="503" w="-1" h="-1" measuredW="49" measuredH="27" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Test</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::ComboBox" x="503" y="505" w="139" h="-1" measuredW="127" measuredH="24" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Marlin%20/%20Sprinter</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::TitleWindow" x="22" y="1250" w="450" h="400" measuredW="450" measuredH="400" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Button" x="402" y="1283" w="67" h="57" measuredW="54" measuredH="27" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>menu</text>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Button" x="402" y="1551" w="63" h="52" measuredW="48" measuredH="27" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Quit</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Label" x="405" y="1417" w="60" h="-1" measuredW="60" measuredH="21" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Duplicator</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::ButtonBar" x="34" y="1281" w="334" h="27" measuredW="334" measuredH="27" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>General%2C%20Printer%20software%2C%20Scanning%2C%20Slicing</text>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Button" x="276" y="1576" w="107" h="27" measuredW="107" measuredH="27" zOrder="95" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Save%20Settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::ComboBox" x="40" y="1329" w="77" h="-1" measuredW="65" measuredH="24" zOrder="96" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Slic3r</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::ComboBox" x="37" y="1377" w="88" h="-1" measuredW="88" measuredH="24" zOrder="97" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>config%20file</text>
       </controlProperties>
     </control>
   </controls>

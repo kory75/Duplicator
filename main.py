@@ -23,13 +23,13 @@ class PrintScreen(Screen):
 class ScanScreen(Screen):
     pass
     
-class FileScreen(Screen):
+class ShareScreen(Screen):
     pass
     
-class ControllScreen(Screen):
+class ConfigScreen(Screen):
     pass
 
-class ModelScreen(Screen):
+class PlaterScreen(Screen):
     pass
     
 class ViewScreen(Screen):
@@ -42,13 +42,13 @@ class DuplicatorApp(App):
 	sm = 0
 	def build(self):
 		self.sm = ScreenManager()
-		self.sm.add_widget(MenuScreen(name='menu'))
-		self.sm.add_widget(PrintScreen(name='print'))
-		self.sm.add_widget(ScanScreen(name='scan'))
-		self.sm.add_widget(FileScreen(name='file'))
-		self.sm.add_widget(ControllScreen(name='controll'))
-		self.sm.add_widget(ModelScreen(name='model'))
-		self.sm.add_widget(ViewScreen(name='view'))
+		self.sm.add_widget(MenuScreen(name='Menu'))
+		self.sm.add_widget(PrintScreen(name='Print'))
+		self.sm.add_widget(ScanScreen(name='Scan'))
+		self.sm.add_widget(ShareScreen(name='Share'))
+		self.sm.add_widget(ConfigScreen(name='Config'))
+		self.sm.add_widget(PlaterScreen(name='Plater'))
+		self.sm.add_widget(ViewScreen(name='View'))
 		
 		#connecttoprinter.bind(active=switchprinter)
 		return self.sm
