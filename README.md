@@ -2,6 +2,8 @@
 
 Ultimate 3D printing and scanning controller. Modular design. Responsive GUI. Multi Platform (Windows, Mac, Linux, Raspbery Pi, Tablets and Phones)
 
+# Notice: Under Development - Not much works yet.
+
 ##Goals
 
 ###Main Functionality
@@ -13,6 +15,13 @@ Ultimate 3D printing and scanning controller. Modular design. Responsive GUI. Mu
 5. Plater
 
 ###Other functionality
+
+
+## Installation
+
+### Dependencies
+
+opencv
 
 ##Licence
 
