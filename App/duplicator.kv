@@ -1,0 +1,833 @@
+#:kivy 1.0.9
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+
+[MenuBar@BoxLayout]:
+	id:menubar_box
+	orientation: 'vertical'
+	size_hint: .20,1
+	padding:0
+	spacing:0
+	Button:
+		size_hint: 1,.33
+	    pos_hint:{'top': 1}
+	    background_normal: 'img/Main/menu_button.png'
+	    
+		on_press: app.switchtoscreen('Menu')
+		border: (0,0,0,0)
+			
+	Button: 
+		size_hint: 1,.1
+		background_normal: 'img/Main/title.png'
+		background_down: 'img/Main/title.png'
+		border: (0,0,0,0)
+		
+	StackLayout:
+    	spacing:0
+		padding:1
+    	orientation: 'lr-tb'
+    	size_hint: 1,.24
+    	
+    	canvas:
+	        Color:
+	            rgba: (1, 1, 0, .8)
+	        Rectangle:
+	            pos: self.pos
+	            size: self.size
+    	
+    	Label: 
+    		text: 'P'
+	    	id: indicator_printer
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			font_size: self.height/3*2
+			bold: True
+		
+		Label: 
+    		text: 'S'
+	    	id: indicator_scanner
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			font_size: self.height/3*2
+			bold: True
+			
+		Label: 
+    		text: 'Sl'
+	    	id: indicator_slicer
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			font_size: self.height/3*2
+			bold: True
+			
+		Label: 
+    		text: 'Extruder'
+	    	id: indicator_extruder
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+						
+		Label: 
+    		text: 'Camera'
+	    	id: indicator_camera
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			
+		Label: 
+    		text: 'Slicing'
+	    	id: indicator_slicing
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			
+		Label: 
+    		text: 'Bed'
+	    	id: indicator_bed
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			
+		Label: 
+    		text: 'Laser'
+	    	id: indicator_laser
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+			
+		Label: 
+    		text: 'T'
+	    	id: indicator_torrent
+			size_hint: .33,.33
+			color: (0,0,0,1)
+			border: (0,0,0,0)
+		
+	Button: 
+		id: short_message
+		text: ''
+		size_hint: 1,.21
+		background_normal: 'img/Main/sidebar_placeholder.png'
+		background_down: 'img/Main/sidebar_placeholder.png'
+		border: (0,0,0,0)
+		color: (0,0,0,1)
+				
+	Button:			
+		size_hint: 1,.13
+		on_press: app.stop()
+		background_normal: 'img/Main/off_button.png'
+		background_down: 'img/Main/off_button.png'  
+		border: (0,0,0,0)  
+		   
+<MenuScreen>:    
+    StackLayout:
+    	id: window_layout
+    	spacing:0
+		padding:0
+    	size: root.size
+        pos: root.pos
+    	orientation: 'lr-tb'
+		StackLayout:
+			size_hint: .80,1
+			spacing:0
+			padding:0
+			orientation: 'rl-tb'
+			
+			Button:
+		        background_normal: 'img/Main/row1-col3.png'
+		        background_down: 'img/Main/row1-col3.png'
+		        size_hint: .33, .33
+		        on_press: app.switchtoscreen('Share')
+		        text: 'Share'
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf'
+				border: (0,0,0,0)
+				color: (0,0,0,1)
+				
+			
+			Button:
+		        background_normal: 'img/Main/row1-col2.png'
+		        background_down: 'img/Main/row1-col2.png'
+		        size_hint: .33, .33
+		        on_press: app.switchtoscreen('Scan') 
+		        text: 'Scan'
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf'
+				border: (0,0,0,0)
+		        color: (0,0,0,1)	
+			
+			Button:
+		        background_normal: 'img/Main/row1-col1.png'
+		        background_down: 'img/Main/row1-col1.png'
+		        size_hint: .28, .33
+		        on_press: app.switchtoscreen('Print')
+		        text: 'Print'
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf'
+				border: (0,0,0,0)
+				color: (0,0,0,1) 
+			
+			Button:
+		        background_normal: 'img/Main/row1-edge-left.png'
+		        background_down: 'img/Main/row1-edge-left.png'
+		        size_hint: .05, .33
+		        border: (0,0,0,0)
+			
+			Button: 
+		        size_hint: .33, .33  
+		        background_normal: 'img/Main/row2-col3.png'
+		        background_down: 'img/Main/row2-col3.png'
+		        on_press: app.open_settings()   
+		        text: 'Config'
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf'
+				border: (0,0,0,0)
+				color: (0,0,0,1)        
+		       
+			Button:
+		        background_normal: 'img/Main/row2-col2.png'
+		        background_down: 'img/Main/row2-col2.png'
+		        size_hint: .33, .33  
+		        on_press: app.switchtoscreen('View')     
+				text: 'Model'
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf'
+				border: (0,0,0,0)
+				color: (0,0,0,1)
+			
+			Button:
+		        background_normal: 'img/Main/row2-col1.png'
+		        background_down: 'img/Main/row2-col1.png'
+		        size_hint: .28, .33  
+		        font_size: 42
+				bold: True
+				font_name: 'fonts/arial-rounded-mt-bold.ttf' 
+				border: (0,0,0,0)
+				
+			Button:
+		        background_normal: 'img/Main/row2-edge-left.png'
+		        background_down: 'img/Main/row2-edge-left.png'
+		        size_hint: .05, .33
+		        border: (0,0,0,0)	
+			
+			Button: 
+		        size_hint: .33, .26 
+		        background_normal: 'img/Main/menu-curve.png'
+		        background_down: 'img/Main/menu-curve.png'
+				border: (0,0,0,0)
+				
+			Label:
+				text: 'Duplicator Ready'
+				id: log_box
+				size_hint: .66, .26 
+				border: (0,0,0,0)
+			
+			Button:
+		    	size_hint: .13, .08 
+		        background_normal: 'img/Main/menu-bottom-connector.png'
+		        background_down: 'img/Main/menu-bottom-connector.png'
+		        border: (0,0,0,0)
+			
+			ProgressBar
+				id: main_printing_progressbar
+				size_hint: .43,.08
+				max:100
+				value:0
+			
+			Button:
+		    	size_hint: .28, .08
+		        background_normal: 'img/Main/printing.png'
+		        background_down: 'img/Main/printing.png'
+		        border: (0,0,0,0)
+			 
+		    Button:
+		    	size_hint: .05, .08 
+		        background_normal: 'img/Main/row4-edge-left.png'
+		        background_down: 'img/Main/row4-edge-left.png'
+		        border: (0,0,0,0)		       
+		        
+		
+		        
+<PrintScreen>:
+	BoxLayout:
+		id: window_layout
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+    	
+    	BoxLayout:
+			orientation: 'vertical'
+			size_hint: .8,1
+    	
+			#File managment
+	    	BoxLayout:
+				orientation: 'horizontal'
+				size_hint: 1,.1
+								
+				Button:
+					id: print_gcode_button
+					text: 'Print'
+					size_hint:.33,1
+					on_press: app.printGcodeFile()
+					
+				Button:
+					id: gcode_file_name
+					text:'No gcode file selected'
+					on_press: app.show_gcode_load()
+					
+				Button:
+					text: 'View'
+					size_hint:.10,1
+					
+				Button:
+					id: gcode_estimate
+					text: '-'
+					size_hint:.23,1
+			
+			BoxLayout:
+				orientation: 'horizontal'
+				size_hint: 1,.8
+			
+	
+						
+				#Manual controll
+				BoxLayout:
+					orientation: 'vertical'
+					size_hint: .8,1
+					
+					#XYZ
+					BoxLayout:
+						orientation: 'horizontal'
+						size_hint: 1,.60
+					
+						#stepsize
+						BoxLayout:
+							orientation: 'vertical'
+							size_hint: .10,1
+							
+							ToggleButton:
+								text: '100mm'
+								size_hint:1,.25
+								group: 'stepSize'
+								color:(0,0,0,1)
+								background_normal: 'img/Controll/mm_100.png'
+							ToggleButton:
+								text: '10mm'
+								size_hint:1,.25
+								group: 'stepSize'
+								state: 'down'
+								background_normal: 'img/Controll/mm_10.png'
+							ToggleButton:
+								text: '1mm'
+								size_hint:1,.25
+								group: 'stepSize'
+								background_normal: 'img/Controll/mm_10.png'
+							ToggleButton:
+								text: '0.1mm'
+								size_hint:1,.25
+								group: 'stepSize'
+								background_normal: 'img/Controll/mm_10.png'
+					
+					    #X
+						BoxLayout:
+							orientation: 'vertical'
+							size_hint: .31,1
+							
+							Button:
+								text: '+X'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/x_plus.png'
+								on_press: app.move('Y',10)
+							Button:
+								text: 'X Home'
+								size_hint:1,.33
+								on_press: app.homeX()
+								font_size: 36
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/x_plus.png'
+							Button:
+								text: '-X'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/x_plus.png'
+								on_press: move('Y',-10)
+						#Y
+						BoxLayout:
+							orientation: 'vertical'
+							size_hint: .31,1
+							
+							Button:
+								text: '+Y'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/y_plus.png'
+							Button:
+								text: 'Y Home'
+								size_hint:1,.33
+								on_press: app.homeY()
+								font_size: 36
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/y_plus.png'
+							Button:
+								text: '-Y'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/y_plus.png'
+						#Z
+						BoxLayout:
+							orientation: 'vertical'
+							size_hint: .31,1
+							
+							Button:
+								text: '+Z'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/z_plus.png'
+							Button:
+								text: 'Z Home'
+								size_hint:1,.33
+								on_press: app.homeZ()
+								font_size: 36
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/z_minus.png'
+							Button:
+								text: '-Z'
+								size_hint:1,.33
+								font_size: 42
+								bold: True
+								font_name: 'fonts/arial-rounded-mt-bold.ttf'
+								background_normal: 'img/Controll/z_minus.png'
+								
+					
+					#Extruders	
+					BoxLayout:
+						orientation: 'vertical'
+						size_hint: 1,.26
+						
+						BoxLayout:
+							orientation: 'horizontal'
+							size_hint: 1,.5
+						
+							Button:
+								text: '-E 1'
+								size_hint:.25,1
+								background_normal: 'img/Controll/e_minus.png'
+							Label:
+								text: '0C / 235C'
+								size_hint:.25,1
+							Switch:
+								active: 0
+								text: 'Extruder On'
+								size_hint:.25,1
+							Button:
+								text: '+E 1'
+								size_hint:.25,1
+								background_normal: 'img/Controll/e_plus.png'
+				
+						BoxLayout:
+							orientation: 'horizontal'
+							size_hint: 1,.5
+						
+							Button:
+								text: '-E 2'
+								size_hint:.25,1
+								background_normal: 'img/Controll/e_minus.png'
+							Label:
+								text: '0C / 235C'
+								size_hint:.25,1
+							Switch:
+								active: 0
+								text: 'Extruder On'
+								size_hint:.25,1
+							Button:
+								text: '+E 2'
+								size_hint:.25,1
+								background_normal: 'img/Controll/e_plus.png'
+						
+					#Bed heater	
+					BoxLayout:
+						orientation: 'horizontal'
+						size_hint: 1,.14
+					
+						Button:
+							text: '-Bed 1'
+							size_hint:.25,1
+							background_normal: 'img/Controll/bed_minus.png'
+						Label:
+							text: '0C / 70C'
+							size_hint:.25,1
+						Switch:
+							active: 0
+							text: 'Bed On'
+							size_hint:.25,1
+						Button:
+							text: '+Bed 1'
+							size_hint:.25,1
+							background_normal: 'img/Controll/bed_plus.png'
+			
+				#Controlls
+				BoxLayout:
+					orientation: 'vertical'
+					size_hint: .20,1
+		
+					ToggleButton:	
+						id:connectprinterswitch
+						active: 0
+						size_hint:1,.2
+						on_press: app.connectprinter(self.active)
+						background_normal: 'img/Controll/connect.png'
+						background_down: 'img/Controll/connect-on.png'
+					Button:
+						size_hint:1,.2
+						background_normal: 'img/Controll/home_all.png'
+						on_press: app.homeprinter()
+					ToggleButton:
+						id: pause_button
+						on_press: app.pause()
+						size_hint:1,.2
+						background_normal: 'img/Controll/pause.png'
+					Button:
+						text: 'Motors off'
+						size_hint:1,.2
+						background_normal: 'img/Controll/motor_off.png'
+					Button:
+						id: emergency_stop_button
+						on_press: app.emergencyStop()
+						size_hint:1,.2
+						background_normal: 'img/Controll/stop.png'
+			
+			#Monitor
+			StackLayout:
+				orientation:'rl-tb'
+				size_hint:1,.1
+				
+				Button:
+			    	size_hint: .13, 1 
+			        background_normal: 'img/Main/menu-bottom-connector.png'
+			        background_down: 'img/Main/menu-bottom-connector.png'
+			        border: (0,0,0,0)
+			
+				ProgressBar
+					id: main_printing_progressbar
+					size_hint: .43,1
+					max:100
+					value:0
+				
+				Button:
+			    	size_hint: .28, 1
+			        background_normal: 'img/Main/printing.png'
+			        background_down: 'img/Main/printing.png'
+			        border: (0,0,0,0)
+				 
+			    Button:
+			    	size_hint: .05, 1
+			        background_normal: 'img/Main/row4-edge-left.png'
+			        background_down: 'img/Main/row4-edge-left.png'
+			        border: (0,0,0,0)	
+	       
+
+<ScanScreen>:
+	BoxLayout:
+		id: window_layout
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: .80,1
+		
+			StackLayout:
+				orientation:'rl-tb'
+				size_hint: 1,.6
+				
+				
+				StackLayout:
+					orientation:'tb-lr'
+					size_hint:.23,1
+					ToggleButton:
+						id: camera_button
+						text:'Camera'
+						on_press: app.cameraSwitch()
+						background_normal: 'img/Scan/row1-col3.png'
+				        background_down: 'img/Scan/row1-col3.png'
+				        size_hint: 1, .25
+				        font_size: 24
+						bold: True
+						font_name: 'fonts/arial-rounded-mt-bold.ttf'
+						border: (0,0,0,0)
+						color: (0,0,0,1)
+						
+					Button:
+						background_normal: 'img/Scan/row2-col3.png'
+				        background_down: 'img/Scan/row2-col3.png'
+				        size_hint: 1, .25
+				        text: 'Laser'
+				        font_size: 24
+						bold: True
+						font_name: 'fonts/arial-rounded-mt-bold.ttf'
+						border: (0,0,0,0)
+						color: (0,0,0,1) 
+						
+					Button:
+						size_hint: 1,.25
+						text: 'Calibrate'
+				        font_size: 24
+						bold: True
+						font_name: 'fonts/arial-rounded-mt-bold.ttf'
+						background_normal: 'img/Scan/row2-col3.png'
+				        background_down: 'img/Scan/row2-col3.png'
+				        border: (0,0,0,0)
+						color: (0,0,0,1) 
+						
+					Button:
+						text:'Scan'
+						size_hint: 1,.25
+						font_size: 24
+						bold: True
+						font_name: 'fonts/arial-rounded-mt-bold.ttf'
+						background_normal: 'img/Scan/row2-col3.png'
+				        background_down: 'img/Scan/row2-col3.png'
+				        border: (0,0,0,0)
+						color: (0,0,0,1) 
+				
+				StackLayout:
+					orientation:'rl-tb'
+					id: scan_camera_holder
+					size_hint:.66,1 
+						
+					
+					
+				Button:
+					background_normal: 'img/Scan/row1-edge-left.png'
+			        background_down: 'img/Scan/row1-edge-left.png'
+			        size_hint: .1, 1
+					border: (0,0,0,0)
+					color: (0,0,0,1) 			
+				
+				
+			
+			StackLayout:
+				orientation:'rl-tb'
+				size_hint: 1,.4	
+				
+				Button:
+					background_normal: 'img/Scan/save.png'
+			        background_down: 'img/Scan/save.png'
+			        size_hint: .24, .33
+			        text: 'Save'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+				
+				TextInput:
+		            id: scan_file_name
+		            #size_hint_y: None
+		            height: 30
+		            multiline: False
+		            size_hint: .33,.33	
+		            foreground_color: (1,1,1,1)
+		            background_color: (0,0,0,1)
+		            font_size: 18
+				
+				Button:
+					background_normal: 'img/Scan/file.png'
+			        background_down: 'img/Scan/file.png'
+			        size_hint: .33, .33
+			        text: 'File'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1) 
+					
+				Label:
+					text: 'scanning'
+					size_hint: 1,.33
+				
+				ProgressBar
+					id: main_scanning_progressbar
+					size_hint: .33,.33
+					max:100
+					value:0	
+					
+				Button:
+					background_normal: 'img/Scan/scanning.png'
+			        background_down: 'img/Scan/scanning.png'
+			        size_hint: .33, .33
+			        text: 'Scan'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+					
+				Button:
+					background_normal: 'img/Scan/row2-edge-left.png'
+			        background_down: 'img/Scan/row2-edge-left.png'
+			        size_hint: .1, .33
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+		
+		   
+		
+<ShareScreen>:
+	BoxLayout:
+		id: window_layout
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			FileChooserIconView:
+	            id: file_filechooser
+				size_hint:.66,1
+		
+			StackLayout:
+				orientation:'tb-lr'
+				size_hint:.33,1
+			
+				Button:
+					text: 'Print'
+					size_hint:1,.33
+					
+				Button:
+					text: 'Upload'
+					size_hint:1,.33
+					
+				Button:
+					text: 'Slice'
+					size_hint:1,.33
+		
+		   
+		
+<ModelScreen>:
+	BoxLayout:
+		id: window_layout
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			Label:
+				text: 'Model'
+		
+		
+		
+<ViewScreen>:
+	BoxLayout:
+		id: window_layout
+    	size: root.size
+        pos: root.pos
+    	orientation: 'horizontal'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: .80,1
+		
+			Label:
+				text: 'View'
+		
+
+<FileGcodeLoadScreen>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "horizontal"
+        
+        BoxLayout:
+        	size_hint: 0.9,1
+			orientation: "vertical"	
+			
+			BoxLayout:
+	            size_hint: 1,0.09
+	            orientation: "horizontal"
+	            Button:
+	                text: "Icon View"
+	                background_normal: 'img/File/row1-col1.png'
+			        background_down: 'img/File/row1-col1.png'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (1,1,1,1)
+	
+	            Button:
+	                text: "Tree View"
+	                background_normal: 'img/File/row1-col2.png'
+			        background_down: 'img/File/row1-col2.png'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+        
+	        FileChooserIconView:
+	        	size_hint: 
+	            id: filechooser
+	            filters: ['*.gcode']
+	
+	        BoxLayout:
+	            size_hint: 1,0.09
+	            orientation: "horizontal"
+	            Button:
+	                text: "Cancel"
+	                on_release: app.cancelFileGcodeLoad()
+	                background_normal: 'img/File/row3-col1.png'
+			        background_down: 'img/File/row3-col1.png'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+	
+	            Button:
+	                text: "Load"
+	                on_release: app.load_gcode(filechooser.path, filechooser.selection)		
+	                background_normal: 'img/File/row3-col2.png'
+			        background_down: 'img/File/row3-col2.png'
+			        font_size: 24
+					bold: True
+					font_name: 'fonts/arial-rounded-mt-bold.ttf'
+					border: (0,0,0,0)
+					color: (0,0,0,1)
+	                
+		Button:
+			size_hint: .1,1
+			background_normal: 'img/File/col3.png'
+			background_down: 'img/File/col3.png'
+	        
+<-CVCamera>:
+	id:scan_camera
+    canvas:
+        Color:
+            rgb: (1, 1, 1)
+        Rectangle:
+            texture: self.texture

@@ -1,0 +1,53 @@
+[
+        { "type": "options",
+          "title": "Scanning Technology",
+          "desc": "Scanner Technolgy Type",
+          "section": "scanner",
+          "key": "scanner_tech",
+          "options": ["Laser", "Structured Light", "Stereo Camera"] 
+        },  
+        { "type": "options",
+          "title": "Avaliable Cameras",
+          "desc": "How many Cameras attached?",
+          "section": "scanner",
+          "key": "scanner_camera_count", 
+          "options": ["0","1","2"]
+        },
+        { "type": "bool",
+          "title": "Turn Table",
+          "desc": "Avaliable Turn Table",
+          "section": "scanner",
+          "key": "scanner_turn_table" 
+        },  
+        { "type": "bool",
+          "title": "Use Polar Printer as Turn Table",
+          "desc": "",
+          "section": "scanner",
+          "key": "scanner_printer_as_turn_table" 
+        },    
+        { "type": "title",
+          "title": "Laser Scanning" 
+        },   
+        { "type": "options",
+          "title": "Laser Operation",
+          "desc": "Manual or Controlled",
+          "section": "scanner",
+          "key": "scanner_laser",
+          "options": ["Manual","Standalone"]  
+        },
+        { "type": "numeric",
+          "title": "Camera Index",
+          "desc": "The index of camera wish to used for scanning",
+          "section": "scanner",
+          "key": "scanner_camera_index"  
+        }, 
+        { "type": "title",
+          "title": "Structured Light Scanning" 
+        },  
+        { "type": "numeric",
+          "title": "Projector Index",
+          "desc": "",
+          "section": "scanner",
+          "key": "scanner_projector"  
+        }
+]

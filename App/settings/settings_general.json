@@ -1,0 +1,18 @@
+[
+	{	"type":"title",
+		"title":"General Settings"
+	},
+	{	"type":"options",
+		"title":"My first key",
+		"desc":"Description of my first key",
+		"section":"general",
+		"key":"app_background_color",
+		"options":["000000","ffffff","000033"]
+	},
+	{	"type":"numeric",
+		"title":"App Width",
+		"desc":"Window width",
+		"section":"general",
+		"key":"app_width"
+	}
+]

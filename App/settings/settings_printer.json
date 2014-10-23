@@ -1,0 +1,81 @@
+[
+    { 	"type": "options",
+        "title": "Printer Type",
+        "desc": "Layout and printing Technology",
+        "section": "printer",
+        "key": "printer_technology",
+        "options": ["fdm cartesian(mendel)","fdm delta(rostock)","fdm polar(r-360)","Resin laser","Resin projector"] 
+    },
+    {
+        "type": "title",
+        "title": "Communication"
+    },
+    {
+        "type": "string",
+        "title": "Comunication Port",
+        "desc": "example: /dev/tty.usbmodem1411",
+        "section": "printer",
+        "key": "printer_com_port",
+        "true": "auto"
+    },
+    { 
+    	"type": "numeric",
+        "title": "Speed",
+        "desc": "speed of serial comunication default:115200",
+        "section": "printer",
+        "key": "printer_com_speed"
+    },
+    {
+        "type": "title",
+        "title": "FDM"
+    },
+    { 	"type": "options",
+        "title": "Extruders",
+        "desc": "How many exruders are used",
+        "section": "printer",
+        "key": "printer_extruder_count",
+        "options": ["1","2"] 
+     },
+     { 
+     	"type": "bool",
+        "title": "Heated Bed",
+        "desc": "Heated bed avaliable",
+        "section": "printer",
+        "key": "printer_heated_bed",
+        "options": ["1","2"] 
+     },
+     { 
+     	"type": "numeric",
+        "title": "Extruder 1 Temperature",
+        "desc": "Heated bed avaliable",
+        "section": "printer",
+        "key": "printer_extruder_1_temp"
+     },
+     { 
+     	"type": "numeric",
+        "title": "Extruder 2 Temperature",
+        "desc": "Heated bed avaliable",
+        "section": "printer",
+        "key": "printer_extruder_2_temp"
+     },
+     { 
+     	"type": "numeric",
+        "title": "Heated Bed",
+        "desc": "Heated bed temerature",
+        "section": "printer",
+        "key": "printer_bed_temp"
+     },
+     {
+        "type": "title",
+        "title": "Resin"
+     },
+     { 
+     	"type": "string",
+        "title": "Printer projector",
+        "desc": "Projector for resin printers",
+        "section": "printer",
+        "key": "printer_projector",
+        "true": "auto"
+     }
+     
+]
